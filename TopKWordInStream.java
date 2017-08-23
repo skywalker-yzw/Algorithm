@@ -3,7 +3,7 @@
  */
 /**
  input stream - "ipad", "iphone", "iphone 5", "iphone" ......
- Top k most frequently occurring words. The
+ Top k most frequently occurring words. The stream will be dynamic
 
  iphone - 2,
  ipad - 1

@@ -85,7 +85,7 @@ public class TopKWordInStream {
     }
 
     public static void main(String[] args) {
-        TopKWordInStream obj = new TopKWordInStream(4);
+        TopKWordInStream obj = new TopKWordInStream(2);
 
         obj.add("iphone");
         obj.add("ipad");
@@ -101,7 +101,12 @@ public class TopKWordInStream {
         obj.add("macbook air");
         obj.add("imac");
         obj.add("macbook");
+        System.out.println(obj.get());
 
+        obj.add("imac");
+        obj.add("imac");
+        obj.add("imac");
+        obj.add("imac");
         System.out.println(obj.get());
     }
 }

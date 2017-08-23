@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 /**
  * Created by yizhiw on 7/26/2017.
+ * This class will check if a passing number is a prime or not
  */
 public class CheckPrime {
     public static boolean isPrime(int n) {

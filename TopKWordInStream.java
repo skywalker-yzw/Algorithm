@@ -1,5 +1,5 @@
 /**
- * Created by yizhiw on 7/28/2017.
+ * Created by yizhiw on 08/22/2017.
  */
 /**
  input stream - "ipad", "iphone", "iphone 5", "iphone" ......
@@ -12,6 +12,7 @@
 import java.util.*;
 
 public class TopKWordInStream {
+    // an inner class to store the word and its frequency
     class Node {
         String str;
         int  frequency;
@@ -21,7 +22,7 @@ public class TopKWordInStream {
             this.frequency = frequency;
         }
     }
-
+    // map will keep tracking the mapping between word and its Node
     Map<String, Node>  map;
     Queue<Node> pQueue;
     int k;
@@ -69,7 +70,8 @@ public class TopKWordInStream {
             }
         }
     }
-
+    
+    // this API will return the top k words in the stream
     public List<String> get() {
         List<String> ret = new LinkedList<String>();
 

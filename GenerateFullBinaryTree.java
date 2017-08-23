@@ -27,7 +27,8 @@ public class GenerateFullBinaryTree {
     }
 
     public List<Node> generateFullBinaryTree(int n) {
-        List res = new ArrayList<Node>(); if (n == 0) {
+        List res = new ArrayList<Node>(); 
+        if (n == 0) {
             res.add(null);
             return res;
         }

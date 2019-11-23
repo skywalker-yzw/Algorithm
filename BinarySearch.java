@@ -11,16 +11,16 @@ public class BinarySearch{
 	public int binarySearchRecur(int num, int[] sortedArray, int start, int end)
 	{
 		int mid = 0;
-		
-		if(start <= end) 
+
+		if(start <= end)
 		{
 			mid = start + (end - start) / 2; // to avoid integer number overflow, can't do (start + end)/2
 		}
 		else
 		{
 			return -1;
-		}	
-		
+		}
+
 		if(num > sortedArray[mid])
 		{
 			return binarySearchRecur(num, sortedArray, mid+1, end);
@@ -32,9 +32,9 @@ public class BinarySearch{
 		else
 		{
 			return mid;
-		}	
+		}
 	}
-	
+
 	/**
 	 * Non-recursive implementation of binary search with while loop for the classic binary search problem
 	 * @param num
@@ -43,14 +43,14 @@ public class BinarySearch{
 	 */
 	public int binarySearchNonrecurClassic(int num, int[] sortedArray)
 	{
-		int start = 0; 
+		int start = 0;
 		int mid = 0;
 		int end = sortedArray.length - 1;
-		
+
 		while(start <= end)
-		{	
+		{
 			mid = start + (end - start) / 2; // to avoid integer number overflow, can't do (start + end)/
-			
+
 			if(num > sortedArray[mid])
 			{
 				start = mid + 1;
@@ -62,12 +62,12 @@ public class BinarySearch{
 			else
 			{
 				return mid;
-			}	
-		}	
-		
+			}
+		}
+
 		return -1;
 	}
-	
+
 	/**
 	 * The non-recursive implementation to find the first position of the number in a sorted ascending array using binary search
 	 * @param nums
@@ -79,18 +79,18 @@ public class BinarySearch{
 		/*validate parameters*/
         if ( (nums == null ) || (nums.length == 0))
         {
-            return -1;    
+            return -1;
         }
-        
+
 		int start = 0;
 		int mid = 0;
 		int end = nums.length - 1;
-		
+
 		//idea is to narrow the search window to 2 when start and end meets, or start and end are adjacent
 		while (start + 1 < end)
         {
-            mid = start + (end - start) / 2; //to avoid integer number overflow 
-            
+            mid = start + (end - start) / 2; //to avoid integer number overflow
+
             if (target > nums[mid])
             {
                 start = mid;
@@ -100,7 +100,7 @@ public class BinarySearch{
                 end = mid;
             }
         }
-        
+
 		//check start and end number to determine what to return
         if (target == nums[start])
         {
@@ -110,8 +110,8 @@ public class BinarySearch{
         {
             return end;
         }
-        
-        return -1;		
+
+        return -1;
 	}
 
 	/**
@@ -125,18 +125,18 @@ public class BinarySearch{
 		/*validate parameters*/
         if ( (nums == null ) || (nums.length == 0))
         {
-            return -1;    
+            return -1;
         }
-        
+
 		int start = 0;
 		int mid = 0;
 		int end = nums.length - 1;
-		
+
 		//idea is to narrow the search window to 2 when start and end meets, or start and end are adjacent
 		while (start + 1 < end)
         {
             mid = (start + end)/2;
-            
+
             if(target >= nums[mid])
             {
                 start = mid;
@@ -146,23 +146,23 @@ public class BinarySearch{
                 end = mid;
             }
         }
-        
+
 		//check start and end number to determine what to return
         if (target == nums[end])
         {
             return end;
-        }        
+        }
         if (target == nums[start])
         {
             return start;
         }
 
-        return -1;	
+        return -1;
 	}
-	
+
 	public static void main(String[] args)
 	{
-		int[] sortedArray = {1, 6, 8, 8, 8, 8, 9};
+		int[] sortedArray = {1, 6, 8, 8, 8, 8, 9, 10, 13};
 		BinarySearch obj = new BinarySearch();
 		int ret = obj.binarySearchRecur(8, sortedArray, 0, sortedArray.length - 1);
 		if(ret == -1)
@@ -170,19 +170,19 @@ public class BinarySearch{
 			System.out.println("Couldn't find the number in the array");
 		}
 		else
-		{	
+		{
 			System.out.println("Using recursive binary search, found the number at index " + ret);
-		}	
-	
+		}
+
 		ret = obj.binarySearchNonrecurClassic(8, sortedArray);
 		if(ret == -1)
 		{
 			System.out.println("Couldn't find the number in the array");
 		}
 		else
-		{	
+		{
 			System.out.println("Using classic non-recursive binary search, found the number at index " + ret);
-		}	
+		}
 
 		ret = obj.binarySearchNonrecurFirstPosition(8, sortedArray);
 		if(ret == -1)
@@ -190,18 +190,18 @@ public class BinarySearch{
 			System.out.println("Couldn't find the number in the array");
 		}
 		else
-		{	
+		{
 			System.out.println("Using classic non-recursive binary search, found the first number occurrence at index " + ret);
-		}	
-		
+		}
+
 		ret = obj.binarySearchNonrecurLastPosition(8, sortedArray);
 		if(ret == -1)
 		{
 			System.out.println("Couldn't find the number in the array");
 		}
 		else
-		{	
+		{
 			System.out.println("Using classic non-recursive binary search, found the last number occurrence at index " + ret);
-		}			
-	}	
+		}
+	}
 }

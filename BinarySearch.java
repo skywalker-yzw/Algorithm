@@ -162,12 +162,12 @@ public class BinarySearch{
 
 	public static void main(String[] args)
 	{
-		int[] sortedArray = {1, 6, 8, 8, 8, 8, 9, 10, 13};
+		int[] sortedArray = {1, 6, 8, 8, 8, 8, 9, 10, 13, 15};
 		BinarySearch obj = new BinarySearch();
 		int ret = obj.binarySearchRecur(8, sortedArray, 0, sortedArray.length - 1);
 		if(ret == -1)
 		{
-			System.out.println("Couldn't find the number in the array");
+			System.out.println("Sorry, couldn't find the number in the array");
 		}
 		else
 		{

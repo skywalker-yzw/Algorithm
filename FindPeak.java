@@ -48,4 +48,11 @@ public class FindPeak {
     	    return end;
     	}
     }
+
+    public static void main(String[] args)
+    {
+       int[] A = {1, 2, 1, 3, 4, 5, 7, 6}; 
+       FindPeak obj = new FindPeak();
+       System.out.println("Peak is " + obj.findPeak(A));
+    }   
 }
